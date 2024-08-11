@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CLOCK</title>
+</head>
+<style>
+ body{
+   background-image: url(https://cdn.pixabay.com/photo/2017/01/24/03/53/plant-2004483_1280.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+ }
+ body div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  bottom: 50%;
+  position: absolute;
+  margin-left: 150px;
+  font-size: 100px;
+  
+  }
+ 
+</style>
+
+<body>
+  <div id="demo"></div>
+</body>
+
+<script>
+  function myClock() {         
+  setTimeout(function() {   
+    const d = new Date();
+    const n = d.toLocaleTimeString();
+    document.getElementById("demo").innerHTML = n; 
+    myClock();             
+  }, 1000)
+}
+myClock(); 
+</script>
+</html>
